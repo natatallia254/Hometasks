@@ -15,7 +15,7 @@ public class HomeWorkApp {
     }
 
     public static void checkSumSign() {
-        int a = 3;
+        int a = 4;
         int b = 6;
         int c = a + b;
 

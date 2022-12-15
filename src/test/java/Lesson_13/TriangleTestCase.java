@@ -1,22 +1,21 @@
 package Lesson_13;
 
 import org.junit.jupiter.api.*;
-import org.junit.platform.commons.logging.Logger;
-import org.junit.platform.commons.logging.LoggerFactory;
-
+import org.junit.jupiter.api.extension.ExtendWith;
 
 class TriangleTestCase {
-    private static final Logger logger =
-            LoggerFactory.getLogger(TriangleTestCase.class);
 
     @RepeatedTest(2)
     public void Triangle1Test() {
+        ForLog forlog = new ForLog();
+        //forlog.process("going");
         Triangle triangle1 = new Triangle();
         triangle1.TriangleFunction(2, 2, -3);
         System.out.println("Негативный сценарий с отрицательной стороной с выполнен");
         System.out.println();
     }
 
+    //@ExtendWith(ForLog.class)
     @org.junit.jupiter.api.Test
     public void Triangle2Test() {
         Triangle triangle2 = new Triangle();

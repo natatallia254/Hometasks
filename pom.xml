@@ -13,7 +13,7 @@
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
         <apache.commons.version>3.12.0</apache.commons.version>
-        <testng.version>7.6.1</testng.version>
+        <testng.version>7.7.0</testng.version>
         <seleniumhq.selenium.version>4.7.1</seleniumhq.selenium.version>
         <junit.jupiter.version>5.9.0</junit.jupiter.version>
 
@@ -22,6 +22,7 @@
         <maven-surefire-report-plugin.version>3.0.0-M7</maven-surefire-report-plugin.version>
         <maven-site-plugin.version>3.7.1</maven-site-plugin.version>
         <maven-project-info-reports-plugin.version>3.0.0</maven-project-info-reports-plugin.version>
+        <junit-jupiter-params.version>5.9.0</junit-jupiter-params.version>
 
         <qos.logback.version>1.4.5</qos.logback.version>
         <slf4j.version>2.0.5</slf4j.version>
@@ -65,6 +66,14 @@
          <artifactId>slf4j-api</artifactId>
          <version>${slf4j.version}</version>
     </dependency>
+
+    <dependency>
+         <groupId>org.junit.jupiter</groupId>
+         <artifactId>junit-jupiter-params</artifactId>
+         <version>${junit-jupiter-params.version}</version>
+         <scope>test</scope>
+    </dependency>
+
 
 
     </dependencies>

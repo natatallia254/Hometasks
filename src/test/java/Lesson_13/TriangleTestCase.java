@@ -12,7 +12,7 @@ class TriangleTestCase {
     @RepeatedTest(2)
     public void Triangle1Test() {
         ForLog forlog = new ForLog();
-        forlog.process("going");
+        //forlog.process("going");
         Triangle triangle1 = new Triangle();
         triangle1.TriangleFunction(2, 2, -3);
         System.out.println("1 / Негативный сценарий с отрицательной стороной с выполнен");

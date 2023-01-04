@@ -1,15 +1,10 @@
 import Lesson_10.Diary;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.time.Duration;
-import java.time.Instant;
-import java.util.concurrent.TimeUnit;
-
 public class DiaryTestCase {
     private WebDriver driver;
     private Diary diary;
@@ -26,7 +21,7 @@ public class DiaryTestCase {
 
     @Test
     public void DiaryTest(){
-        diary.enterUserAndEmail("natallia7539764","natallia7539731@yandex.ru");
+        diary.enterUserAndEmail("natallia7539112","natallia7539112@yandex.ru");
         diary.checkCheckBox();
         diary.clickButton();
         Assert.assertTrue(diary.avatarVisible());

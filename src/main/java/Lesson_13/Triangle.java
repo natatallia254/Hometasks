@@ -10,7 +10,7 @@ package Lesson_13;
 import java.util.InputMismatchException;
 
 public class Triangle {
-    public void TriangleFunction(int a, int b, int c) {
+    public float TriangleFunction(int a, int b, int c) {
         System.out.println("Начало программы вычисления площади треугольника по трем сторонам");
         //Scanner sc = new Scanner(System.in);
         try {
@@ -26,7 +26,8 @@ public class Triangle {
                         if (c<a+b) {
                             float p = (a+b+c)/2.f;
                             float s = (float) Math.sqrt(p * (p - a) * (p - b) * (p - c));
-                            System.out.println("Площадь треугольника: s = " +s);
+                            return s;
+                            //System.out.println("Площадь треугольника: s = " +s);
                         } else
                             System.out.println("Сторона c = " + c + " треугольника слишком большая");
                     } else
@@ -46,6 +47,7 @@ public class Triangle {
             System.out.println("Конец программы");
         }
 
+        return 0;
     }
 }
 

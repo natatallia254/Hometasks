@@ -1,9 +1,6 @@
 package Lesson_13;
 
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
 
 class TriangleTestCase {
     //@ExtendWith(ForLog.class)
@@ -52,7 +49,8 @@ class TriangleTestCase {
     @AfterEach
     public void Triangle5Test() {
         Triangle triangle5 = new Triangle();
-        triangle5.TriangleFunction(1, 1, 1);
+        //triangle5.TriangleFunction(1, 1, 1);
+        Assertions.assertEquals(0.4330126941204071,triangle5.TriangleFunction(1, 1, 1));
         System.out.println("5 / Позитивный сценарий выполнен, площадь треугольника вычислена");
         System.out.println();
     }
@@ -61,7 +59,8 @@ class TriangleTestCase {
     @DisplayName("Площадь треугольника, если (b < a+c) && (a < b+c) && (c < a+b) (positive)")
     public void Triangle6Test() {
         Triangle triangle6 = new Triangle();
-        triangle6.TriangleFunction(5, 2, 6);
+        //triangle6.TriangleFunction(5, 2, 6);
+        Assertions.assertEquals(4.683748722076416,triangle6.TriangleFunction(5, 2, 6));
         System.out.println("6 / Позитивный сценарий выполнен ((b < a+c) && (a < b+c) && (c < a+b)), площадь треугольника вычислена");
         System.out.println();
     }
@@ -70,7 +69,8 @@ class TriangleTestCase {
     @DisplayName("Площадь треугольника, если (b < a+c) && (a < b+c) && (c < a+b) (positive)")
     public void Triangle7Test() {
         Triangle triangle7 = new Triangle();
-        triangle7.TriangleFunction(2, 5, 6);
+        //triangle7.TriangleFunction(2, 5, 6);
+        Assertions.assertEquals(4.683748722076416,triangle7.TriangleFunction(2, 5, 6));
         System.out.println("7 / Позитивный сценарий выполнен ((b < a+c) && (a < b+c) && (c < a+b)), площадь треугольника вычислена");
         System.out.println();
     }
@@ -79,7 +79,8 @@ class TriangleTestCase {
     @DisplayName("Площадь треугольника, если (b < a+c) && (a < b+c) && (c < a+b) (positive)")
     public void Triangle8Test() {
         Triangle triangle8 = new Triangle();
-        triangle8.TriangleFunction(6, 5, 2);
+        //triangle8.TriangleFunction(6, 5, 2);
+        Assertions.assertEquals(4.683748722076416,triangle8.TriangleFunction(6, 5, 2));
         System.out.println("8 / Позитивный сценарий выполнен ((b < a+c) && (a < b+c) && (c < a+b)), площадь треугольника вычислена");
         System.out.println();
     }
@@ -88,8 +89,9 @@ class TriangleTestCase {
     @DisplayName("Площадь равнобедренного треугольника, если (b < a+c) && (a < b+c) && (c < a+b) && (b == c) (positive)")
     public void Triangle9Test() {
         Triangle triangle9 = new Triangle();
-        triangle9.TriangleFunction(5, 12, 12);
-        System.out.println("9 / Негативный сценарий выполнен ((b < a+c) && (a < b+c) && (c < a+b) && (b == c))");
+        //triangle9.TriangleFunction(5, 12, 12);
+        Assertions.assertEquals(29.34173583984375,triangle9.TriangleFunction(5, 12, 12));
+        System.out.println("9 / Позитивный сценарий выполнен ((b < a+c) && (a < b+c) && (c < a+b) && (b == c)), площадь треугольника вычислена");
         System.out.println();
     }
 
@@ -126,17 +128,9 @@ class TriangleTestCase {
     public static void Triangle13Test() {
         Triangle triangle13 = new Triangle();
         triangle13.TriangleFunction(5, 2, 16);
-        System.out.println("13 / Тест до всех выполнен");
+        System.out.println("13 / Тест до всех выполнен (negative)");
         System.out.println();
     }
-
-    /*@DisplayName("Параметризированный тест")
-    @ParameterizedTest
-    @ValueSource(int = {20, 30, 40})
-    public void TriangleTest14(int side) {
-        Triangle triangle14 = new Triangle();
-        Assertions.assertTrue(triangle14.TriangleFunction(side));
-    }*/
 
 
 

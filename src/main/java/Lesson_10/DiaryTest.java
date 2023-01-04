@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import static java.lang.Thread.sleep;
 
-public class AutoTest {
+public class DiaryTest {
     private WebDriver driver;
 
     public void Settings() {
@@ -23,12 +23,13 @@ public class AutoTest {
         try {
             Thread.sleep(2000);   //засыпание, чтобы все загрузилось
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));   //для явного ожидания
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));   //неявное ожидание
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));   //неявное ожидание
             WebElement userInput = driver.findElement(By.xpath("//input[@id='signupform-username']"));
             //WebElement passwInput = driver.findElement(By.xpath("//input[@id='signupform-password']"));
             WebElement mailInput = driver.findElement(By.xpath("//input[@id='signupform-email']"));
             WebElement checkBox = driver.findElement(By.xpath("//input[@id='chk_box_user_confirm']"));
             WebElement button = driver.findElement(By.xpath("//button[@id='signup_btn']"));
+            //WebElement avatar = driver.findElement(By.xpath("//li[@class='avatar']"));
 
             System.out.println("Please wait...");
             userInput.click();
@@ -43,24 +44,8 @@ public class AutoTest {
             if (button.isEnabled()) {
                 button.click();   //нажимаем кнопку "Зарегистрироваться", если она доступна
             }
-            //button.click();
             wait.until(ExpectedConditions.urlToBe("https://diary.ru/new"));   //ждем 10 сек. (выше), чтобы прогрузилась след. страница
             System.out.println("The end. Test is successful");
-
-            /*String window_new = driver.getCurrentUrl();
-            String window_old = "https://diary.ru/new";
-            //System.out.println(window_new);
-            if (window_new == window_old) {
-               System.out.println("Test is success!");
-            } else {
-                System.out.println("Test is failed");
-            }*/
-
-            /*if (Objects.equals(driver.getCurrentUrl(), "https://diary.ru/new")) {
-                System.out.println("Test is successful!");
-            } else {
-                System.out.println("Test is failed");
-            }*/
 
         } catch (InterruptedException e) {
             e.printStackTrace();

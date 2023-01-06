@@ -5,6 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.time.Duration;
+
+import static java.lang.Thread.sleep;
+
 public class bbcReg {
     private WebDriver driver;
 
@@ -56,15 +60,18 @@ public class bbcReg {
         signIn.click();
     }
 
-    public void regNowClick() {
+    public void regNowClick() throws InterruptedException {
+        sleep(1000);
         regNow.click();
     }
 
-    public void ageButtClick() {
+    public void ageButtClick() throws InterruptedException {
+        sleep(1000);
         ageButt.click();
     }
 
-    public void dateBirthEnter(String day, String month, String year) {
+    public void dateBirthEnter(String day, String month, String year) throws InterruptedException {
+        sleep(1000);
         dayField.clear();
         dayField.sendKeys(day);
         monthField.clear();
@@ -74,7 +81,8 @@ public class bbcReg {
         continueButt.click();
     }
 
-    public void registration(String email, String password) {
+    public void registration(String email, String password) throws InterruptedException {
+        sleep(1000);
         emailField.clear();
         emailField.sendKeys(email);
         passwordField.clear();
@@ -82,7 +90,8 @@ public class bbcReg {
         registrButt.click();
     }
 
-    public void OKregistrated() {
+    public void OKregistrated() throws InterruptedException {
+        sleep(1000);
         withoutLetterButt.click();
         contNextButt.click();
     }

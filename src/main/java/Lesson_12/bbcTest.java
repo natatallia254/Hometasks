@@ -35,6 +35,7 @@ public class bbcTest {
                 SignIn.click();   //нажимаем "SignIn", если доступно
             }
 
+
             //wait.until(ExpectedConditions.urlToBe("https://account.bbc.com/signin?realm=%2F&clientId=Account&context=homepage&ptrt=https%3A%2F%2Fwww.bbc.com%2F&userOrigin=HOMEPAGE_GNL&isCasso=false&action=sign-in&redirectUri=https%3A%2F%2Fsession.bbc.com%2Fsession%2Fcallback%3Frealm%3D%2F&service=IdSignInService&nonce=VrBySJ7W-bIco1qIsINRNwlQ4UrZUIJxf-cw"));
 
             WebElement RegisterNow = driver.findElement(By.xpath("//span[text()='Register now']"));

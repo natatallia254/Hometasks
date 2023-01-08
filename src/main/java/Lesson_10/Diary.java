@@ -28,24 +28,26 @@ public class Diary {
         this.driver = driver;
     }
 
-    public void enterUserAndEmail(String user, String email){
+    public Diary enterUserAndEmail(String user, String email){
         userField.clear();
         userField.sendKeys(user);
         emailField.clear();
         emailField.sendKeys(email);
+        return this;
     }
 
-    public void checkCheckBox(){
+    public Diary checkCheckBox(){
         if (!checkBox.isSelected()) {
             checkBox.click();
-        }
+        } return this;
     }
 
-    public void clickButton(){
+    public Diary clickButton() {
         button.click();
+        return this;
     }
 
-    public boolean avatarVisible(){
+    public boolean avatarVisible() {
         return avatar.isDisplayed();
     }
 

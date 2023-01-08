@@ -1,48 +1,39 @@
-import Lesson_12.bbcReg;
+import Lesson_14.TalonRegVK;
+import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import java.time.Duration;
-import static java.lang.Thread.sleep;
 
-public class bbcRegTestCase {
+import java.time.Duration;
+
+public class TalonRegVKTestCase {
     private WebDriver driver;
-    private bbcReg bbcreg;
+    private TalonRegVK talonregvk;
 
     @BeforeClass
-    public void beforeBbcRegTest(){
+    public void beforeTalonRegVKTest() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("https://bbc.com");
-        bbcreg = new bbcReg(driver);
+        driver.get("https://talon.by");
+        talonregvk = new TalonRegVK(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));   //неявное ожидание загрузки элементов
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));  //неявное ожидание загрузки страницы
         driver.manage().window().maximize();
     }
 
     @Test
-    public void bbcRegTest() throws InterruptedException {
-        //sleep(1000);
-        bbcreg.signInClick();
-        sleep(1000);
-        bbcreg.regNowClick();
-        sleep(1000);
-        bbcreg.ageButtClick();
-        //sleep(1000);
-        bbcreg.dateBirthEnter("25", "05", "2003");
-        //sleep(1000);
-        bbcreg.registration("tgjhjffhkj@yandex.ru", "45ydhfhiohh55");
-        //sleep(1000);
-        bbcreg.OKregistrated();
-        //sleep(1000);
-        Assert.assertTrue(bbcreg.YourAccountVisible());
+    @DisplayName("Открытие всех ресурсов для регистрации на Talon.by и последующая регистрация через VK.com")
+    public void talonRegVKTest() {
+        talonregvk.SignInClick();
+        talonregvk.AllButtClick();
+        talonregvk.SignInVK("natallia254@yandex.ru", "bna_nata1985");
+        talonregvk.VKagreeClick();
     }
 
     @AfterClass
-    public void afterBbcRegTest() {
+    public void afterTalonRegVKTest() {
         driver.quit();
     }
 

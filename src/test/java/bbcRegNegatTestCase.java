@@ -1,4 +1,3 @@
-import Lesson_10.Diary;
 import Lesson_12.bbcReg;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,42 +8,37 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import static java.lang.Thread.sleep;
 
-public class bbcRegTestCase {
+public class bbcRegNegatTestCase {
     private WebDriver driver;
-    private bbcReg bbcreg;
+    private bbcReg bbcregnegat;
 
     @BeforeClass
-    public void beforeBbcRegTest(){
+    public void beforeBbcRegNegatTest(){
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://bbc.com");
-        bbcreg = new bbcReg(driver);
+        bbcregnegat = new bbcReg(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));   //неявное ожидание загрузки элементов
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));  //неявное ожидание загрузки страницы
         driver.manage().window().maximize();
     }
 
     @Test
-    public void bbcRegTest() throws InterruptedException {
+    public void bbcRegNegatTest() throws InterruptedException {
         //sleep(1000);
-        bbcreg.signInClick();
+        bbcregnegat.signInClick();
         sleep(1000);
-        bbcreg.regNowClick();
+        bbcregnegat.regNowClick();
         sleep(1000);
-        bbcreg.ageButtClick();
+        bbcregnegat.ageButtClick();
         //sleep(1000);
-        bbcreg.dateBirthEnter("25", "05", "2003");
+        bbcregnegat.dateBirthEnter("20", "07", "2021");
         //sleep(1000);
-        bbcreg.registration("tgjhjffhkj@yandex.ru", "45ydhfhiohh55");
-        //sleep(1000);
-        bbcreg.OKregistrated();
-        //sleep(1000);
-        Assert.assertTrue(bbcreg.YourAccountVisible());
+        Assert.assertTrue(bbcregnegat.refuseVisible());
     }
 
     @AfterClass
-    public void afterBbcRegTest(){
+    public void afterBbcRegNegatTest(){
         driver.quit();
     }
-
 }

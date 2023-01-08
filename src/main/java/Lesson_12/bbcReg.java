@@ -4,9 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.time.Duration;
-
 import static java.lang.Thread.sleep;
 
 public class bbcReg {
@@ -51,26 +48,35 @@ public class bbcReg {
     @FindBy(xpath = "//span[@id='idcta-username' and text()='Your account']")
     private WebElement yourAccount;
 
+    @FindBy(xpath = "//span[text()='Извините, этот пароль недействителен']")
+    private WebElement notification;
+
+    @FindBy(xpath = "//span[text()='Sorry, you need to be 16 or over.']")
+    private WebElement refuse;
+
     public bbcReg(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
 
-    public void signInClick() {
+    public bbcReg signInClick() {
         signIn.click();
+        return this;
     }
 
-    public void regNowClick() throws InterruptedException {
+    public bbcReg regNowClick() throws InterruptedException {
         sleep(1000);
         regNow.click();
+        return this;
     }
 
-    public void ageButtClick() throws InterruptedException {
+    public bbcReg ageButtClick() throws InterruptedException {
         sleep(1000);
         ageButt.click();
+        return this;
     }
 
-    public void dateBirthEnter(String day, String month, String year) throws InterruptedException {
+    public bbcReg dateBirthEnter(String day, String month, String year) throws InterruptedException {
         sleep(1000);
         dayField.clear();
         dayField.sendKeys(day);
@@ -79,25 +85,36 @@ public class bbcReg {
         yearField.clear();
         yearField.sendKeys(year);
         continueButt.click();
+        return this;
     }
 
-    public void registration(String email, String password) throws InterruptedException {
+    public bbcReg registration(String email, String password) throws InterruptedException {
         sleep(1000);
         emailField.clear();
         emailField.sendKeys(email);
         passwordField.clear();
         passwordField.sendKeys(password);
         registrButt.click();
+        return this;
     }
 
-    public void OKregistrated() throws InterruptedException {
+    public bbcReg OKregistrated() throws InterruptedException {
         sleep(1000);
         withoutLetterButt.click();
         contNextButt.click();
+        return this;
     }
 
     public boolean YourAccountVisible() {
         return yourAccount.isDisplayed();
+    }
+
+    public boolean notificationVisible() {
+        return notification.isDisplayed();
+    }
+
+    public boolean refuseVisible() {
+        return refuse.isDisplayed();
     }
 
 }

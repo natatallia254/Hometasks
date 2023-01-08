@@ -24,7 +24,7 @@ public class TalonRegOKTestCase {
     }
 
     @Test
-    @DisplayName("Открытие всех ресурсов для регистрации на Talon.by и последующая регистрация через OK.ru")
+    @DisplayName("Регистрация через OK.ru")
     public void talonRegOKTest() {
         talonregok.SignInClick();
         talonregok.OKbuttonClick();

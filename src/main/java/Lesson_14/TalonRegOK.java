@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class TalonRegOK {
     private WebDriver driver;
 
-    @FindBy(xpath = "//a[@class='color' and @href='/login' and text()='Войти']")
+    @FindBy(xpath = "//a[@href='/login' and @class='color' and text()='Войти']")
     private WebElement signIn;
 
     @FindBy(xpath = "//a[@class='odnoklassniki' and @href='https://talon.by/connect/odnoklassniki']")

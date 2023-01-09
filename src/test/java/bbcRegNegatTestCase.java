@@ -38,7 +38,7 @@ public class bbcRegNegatTestCase {
     }
 
     @AfterClass
-    public void afterBbcRegNegatTest(){
+    public void afterBbcRegNegatTest() {
         driver.quit();
     }
 }

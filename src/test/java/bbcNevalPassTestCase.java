@@ -42,7 +42,7 @@ public class bbcNevalPassTestCase {
     }
 
     @AfterClass
-    public void afterBbcNevalPassTest(){
+    public void afterBbcNevalPassTest() {
         driver.quit();
     }
 }

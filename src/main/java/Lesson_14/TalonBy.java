@@ -55,60 +55,12 @@ public class TalonBy {
 
             Thread.sleep(1000);
 
-            /*List<String> windowHandles = new ArrayList(driver.getWindowHandles());
-
-            String window0 = windowHandles.get(0);
-            driver.switchTo().window(window0);
-            String w0 = driver.getTitle();
-            System.out.println(w0);
-
-            String window1 = windowHandles.get(1);
-            driver.switchTo().window(window1);
-            String w1 = driver.getTitle();
-            System.out.println(w1);
-
-            String window2 = windowHandles.get(2);
-            driver.switchTo().window(window2);
-            String w2 = driver.getTitle();
-            System.out.println(w2);
-
-            String window3 = windowHandles.get(3);
-            driver.switchTo().window(window3);
-            String w3 = driver.getTitle();
-            System.out.println(w3);
-
-            String window4 = windowHandles.get(4);
-            driver.switchTo().window(window4);
-            String w4 = driver.getTitle();
-            System.out.println(w4);
-
-            String window5 = windowHandles.get(5);
-            driver.switchTo().window(window5);
-            String w5 = driver.getTitle();
-            System.out.println(w5);*/
-
-
-            /*String window0 = driver.getWindowHandle();
-            Set<String> windowHandles = driver.getWindowHandles();
-            String window1 = null;
-            for (String window : windowHandles) {
-                if (!window.equals(window0)) {
-                    window1 = window;
-                    break;
-                }
-            }
-            driver.switchTo().window(window1);*/
-
-
             String title = "ВКонтакте | Вход";
-            //String title_ = "Вход в личный кабинет | Талон.бай";
             List<String> windowHandles = new ArrayList(driver.getWindowHandles());
             String windowTitle = null;
             for (String window : windowHandles) {
                 if (driver.switchTo().window(window).getTitle().equals(title)) {
                     windowTitle = window;
-                    //driver.switchTo().window(windowTitle);
-                    //break;
                 } else {
                     driver.switchTo().window(window).close();
                   }

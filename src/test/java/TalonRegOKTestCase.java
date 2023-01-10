@@ -17,8 +17,8 @@ public class TalonRegOKTestCase {
         driver = new ChromeDriver();
         driver.get("https://talon.by");
         talonregok = new TalonRegOK(driver);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));   //неявное ожидание загрузки элементов
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));  //неявное ожидание загрузки страницы
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));   //неявное ожидание загрузки элементов
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));  //неявное ожидание загрузки страницы
         driver.manage().window().maximize();
     }
 

@@ -18,8 +18,8 @@ public class TalonRegVKTestCase {
         driver = new ChromeDriver();
         driver.get("https://talon.by");
         talonregvk = new TalonRegVK(driver);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));   //неявное ожидание загрузки элементов
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));  //неявное ожидание загрузки страницы
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));   //неявное ожидание загрузки элементов
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));  //неявное ожидание загрузки страницы
         driver.manage().window().maximize();
     }
 

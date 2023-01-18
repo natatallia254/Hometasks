@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import static java.lang.Thread.sleep;
 
-public class DiaryTest {
+public class DiaryTestIK {
     private WebDriver driver;
 
     public void Settings() {

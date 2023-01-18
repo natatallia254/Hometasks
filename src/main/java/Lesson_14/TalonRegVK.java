@@ -38,8 +38,11 @@ public class TalonRegVK {
     @FindBy(xpath = "//button[@class='flat_button oauth_button button_wide' and @id='install_allow' and text()='Войти']")
     private WebElement VKsignIn;
 
-    @FindBy(xpath = "//button[@class='flat_button fl_r button_indent' and @onclick='return allow(this);']")
-    private WebElement VKagree;
+    //@FindBy(xpath = "//button[@class='flat_button fl_r button_indent' and @onclick='return allow(this);']")
+    //private WebElement VKagree;
+
+    @FindBy(xpath = "//span[@id='openListPatient']")
+    private WebElement OKlistPatient;
 
     public TalonRegVK(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -92,9 +95,13 @@ public class TalonRegVK {
         return this;
     }
 
-    public TalonRegVK VKagreeClick() {
+    /*public TalonRegVK VKagreeClick() {
         VKagree.click();
         return this;
+    }*/
+
+    public boolean PatientVisible() {
+        return OKlistPatient.isDisplayed();
     }
 
 }

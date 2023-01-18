@@ -7,6 +7,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import java.time.Duration;
 
+import static java.lang.Thread.sleep;
+
 public class TalonRegOKTestCase {
     private WebDriver driver;
     private TalonRegOK talonregok;
@@ -24,16 +26,25 @@ public class TalonRegOKTestCase {
 
     @Test
     @DisplayName("Регистрация через OK.ru")
-    public void talonRegOKTest() {
-        talonregok.SignInClick();
-        talonregok.OKbuttonClick();
-        talonregok.SignInOK("natallia254@yandex.ru", "bna_nata1985");
-        talonregok.PatientVisible();
+    public void talonRegOKTest() throws InterruptedException {
+        try {
+            sleep(1000);
+            talonregok.SignInClick();
+            sleep(1000);
+            talonregok.OKbuttonClick();
+            sleep(1000);
+            talonregok.SignInOK("natallia254@yandex.ru", "bna_nata1985");
+            sleep(1000);
+            talonregok.PatientVisible();
+        } finally {
+            driver.quit();
+        }
+
     }
 
-    @AfterClass
+    /*@AfterClass
     public void afterTalonRegOKTest() {
         driver.quit();
-    }
+    }*/
 
 }

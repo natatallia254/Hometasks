@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static java.lang.Thread.sleep;
+
 public class TalonRegOK {
     private WebDriver driver;
 
@@ -34,17 +36,20 @@ public class TalonRegOK {
         this.driver = driver;
     }
 
-    public TalonRegOK SignInClick() {
+    public TalonRegOK SignInClick() throws InterruptedException {
+        //sleep(1000);
         signIn.click();
         return this;
     }
 
-    public TalonRegOK OKbuttonClick() {
+    public TalonRegOK OKbuttonClick() throws InterruptedException {
+        //sleep(1000);
         OKbutton.click();
         return this;
     }
 
-    public TalonRegOK SignInOK(String email, String password) {
+    public TalonRegOK SignInOK(String email, String password) throws InterruptedException {
+        //sleep(1000);
         OKemail.clear();
         OKemail.sendKeys(email);
         OKpassword.clear();

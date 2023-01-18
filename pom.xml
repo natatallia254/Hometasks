@@ -27,6 +27,12 @@
         <qos.logback.version>1.4.5</qos.logback.version>
         <slf4j.version>2.0.5</slf4j.version>
 
+        <!--новое-->
+        <junit-platform-surefire-provider.version>1.3.2</junit-platform-surefire-provider.version>
+        <aspectj.version>1.9.9.1</aspectj.version>
+        <allure-junit5.version>2.20.1</allure-junit5.version>
+        <!--/новое-->
+
     </properties>
 
     <dependencies>
@@ -80,9 +86,16 @@
          <scope>test</scope>
     </dependency>
 
-
+    <!--новое-->
+    <dependency>
+         <groupId>io.qameta.allure</groupId>
+         <artifactId>allure-junit5</artifactId>
+         <version>${allure-junit5.version}</version>
+    </dependency>
+    <!--/новое-->
 
     </dependencies>
+
 
     <build>
         <plugins>
@@ -90,7 +103,49 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
+                <!--Новое-->
+                <configuration>
+                    <testFailureIgnore>false</testFailureIgnore>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
+                    <systemProperties>
+                        <property>
+                            <name>junit.jupiter.extensions.autodetection.enabled</name>
+                            <value>true</value>
+                        </property>
+                        <!--этого нет в др примере-->
+                        <property>
+                            <name>allure.results.directory</name>
+                            <value>${project.build.directory}/allure-results</value>
+                        </property>
+                        <!--/этого нет в др примере-->
+                    </systemProperties>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>${junit-platform-surefire-provider.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+                <!--/Новое-->
             </plugin>
+            <!--Новое-->
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.12.0</version>
+                <configuration>
+                    <reportVersion>2.4.1</reportVersion>
+                </configuration>
+            </plugin>
+            <!--/Новое-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
@@ -112,6 +167,7 @@
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>${maven-project-info-reports-plugin.version}</version>
             </plugin>
+
         </plugins>
     </build>
 

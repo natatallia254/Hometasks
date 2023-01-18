@@ -118,7 +118,7 @@ class TriangleTestCase {
     }
 
     @Test
-    @DisplayName("Тест до всех")
+    @DisplayName("Тест выполняется до всех")
     @BeforeAll
     public static void Triangle13Test() {
         Triangle triangle13 = new Triangle();

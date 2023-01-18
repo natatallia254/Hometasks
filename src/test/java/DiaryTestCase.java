@@ -21,7 +21,7 @@ public class DiaryTestCase {
 
     @Test
     public void DiaryTest(){
-        diary.enterUserAndEmail("natallia7539661","natallia7539661@yandex.ru");
+        diary.enterUserAndEmail("natallia7539724","natallia7539724@yandex.ru");
         diary.checkCheckBox();
         diary.clickButton();
         Assert.assertTrue(diary.avatarVisible());

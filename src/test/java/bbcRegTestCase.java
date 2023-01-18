@@ -34,7 +34,7 @@ public class bbcRegTestCase {
         //sleep(1000);
         bbcreg.dateBirthEnter("25", "05", "2003");
         //sleep(1000);
-        bbcreg.registration("tgjhvghbkj@yandex.ru", "45ybhbjiohh55");
+        bbcreg.registration("tgjhjnhbkj@yandex.ru", "45ybgyhiohh55");
         //sleep(1000);
         bbcreg.OKregistrated();
         //sleep(1000);

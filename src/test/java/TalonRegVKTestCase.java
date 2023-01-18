@@ -29,7 +29,8 @@ public class TalonRegVKTestCase {
         talonregvk.SignInClick();
         talonregvk.AllButtClick();
         talonregvk.SignInVK("natallia254@yandex.ru", "bna_nata1985");
-        talonregvk.VKagreeClick();
+        talonregvk.PatientVisible();
+        //talonregvk.VKagreeClick();
     }
 
     @AfterClass

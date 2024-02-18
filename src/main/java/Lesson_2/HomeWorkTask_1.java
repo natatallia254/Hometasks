@@ -13,8 +13,8 @@ public class HomeWorkTask_1 {
         int a = sc.nextInt();
         System.out.print("Введите второе целое число: ");
         int b = sc.nextInt();
-        int c = a + b;
-        if (c >= 10 && c <= 20) {
+        //int c = a + b;
+        if (a + b >= 10 && a + b <= 20) {
             System.out.println("true");
         } else {
             System.out.println("false");

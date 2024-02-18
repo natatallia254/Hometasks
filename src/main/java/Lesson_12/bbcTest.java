@@ -87,7 +87,7 @@ public class bbcTest {
                 WithoutLetter.click();   //нажимаем "Спасибо, нет", если доступно
             }
 
-            WebElement Continue2 = driver.findElement(By.xpath("//button[@id='submit-button' and text()='Continue']"));
+            WebElement Continue2 = driver.findElement(By.xpath("//button[@id='submit-button' and text()='Продолжить']"));
             if (Continue2.isEnabled()) {
                 Continue2.click();   //нажимаем "Continue", если доступно
             }

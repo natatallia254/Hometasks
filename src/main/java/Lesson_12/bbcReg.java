@@ -41,7 +41,7 @@ public class bbcReg {
     @FindBy(xpath = "//div[@class='button__text']/child::span[text()='Спасибо, нет']")
     private WebElement withoutLetterButt;
 
-    @FindBy(xpath = "//button[@id='submit-button' and text()='Continue']")
+    @FindBy(xpath = "//button[@id='submit-button' and text()='Продолжить']")
     private WebElement contNextButt;
 
     @FindBy(xpath = "//span[@id='idcta-username' and text()='Your account']")
